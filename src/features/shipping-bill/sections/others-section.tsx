@@ -1,3 +1,9 @@
+import {
+  emptyContainer,
+  emptyDocument,
+  emptyLicense,
+  emptyPackingRange
+} from '../../../domain/shipping-bill/defaults.ts'
 import { Button, Card, Collapsible, Field, Input, RepeatableRow, SectionHeading, Select } from '../../../ui/index.ts'
 import { useBillForm } from '../bill-form-context.tsx'
 import { useReferenceData } from '../reference-data-context.tsx'
@@ -22,7 +28,7 @@ export function OthersSection() {
             <Button
               variant="outline"
               size="sm"
-              onClick={() => form.appendRow('containers', { containerNumber: '' })}>
+              onClick={() => form.appendRow('containers', emptyContainer())}>
               + Add container
             </Button>
           }
@@ -98,7 +104,7 @@ export function OthersSection() {
             <Button
               variant="outline"
               size="sm"
-              onClick={() => form.appendRow('packingRanges', { packingNumberFrom: '', packingNumberTo: '' })}>
+              onClick={() => form.appendRow('packingRanges', emptyPackingRange())}>
               + Add packing range
             </Button>
             <div className="stack stack--sm" style={{ marginTop: '0.6rem' }}>
@@ -145,7 +151,7 @@ export function OthersSection() {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => form.appendRow('documents', { documentTypeCode: '', documentReferenceNumber: '' })}>
+            onClick={() => form.appendRow('documents', emptyDocument())}>
             + Add document
           </Button>
         }>
@@ -169,7 +175,7 @@ export function OthersSection() {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => form.appendRow('licenses', { registrationNumber: '' })}>
+            onClick={() => form.appendRow('licenses', emptyLicense())}>
             + Add licence
           </Button>
         }>
