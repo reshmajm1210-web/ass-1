@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Editor / OS noise
+.DS_Store
+*.local
+*.log
+
+# Env overrides (the app is mock-only; no secrets belong here)
+.env
+.env.*
